@@ -162,7 +162,7 @@ export default (componentName, localTheme, options = {}) => (ThemedComponent) =>
  * @returns {TReactCSSThemrTheme} - Resulting theme
  */
 export function themeable(...themes) {
-  return themes.reduce((acc, theme) => merge(acc, theme), {})
+  return themes.reduce((acc, theme) => merge(acc, theme === null ? undefined : theme), {})
 }
 
 /**
